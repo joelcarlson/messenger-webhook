@@ -4,7 +4,7 @@
 const
   express = require('express'),
   bodyParser = require('body-parser'),
-  request = require('request'),
+  request = require('request'), // run npm install request --save 
   app = express().use(bodyParser.json()); // creates express http server
 
 
@@ -87,7 +87,30 @@ function handleMessage(sender_psid, received_message) {
 
     // Create the payload for a basic text message
     response = {
-      "text": `You sent the message: "${received_message.text}". Now send me an image!`
+      // "text": `You sent me "${received_message.text}". Is this the answer you wish to keep?`,
+      "attachment": {
+      	"type" : "template",
+      	"payload" : {
+      		"template_type" : "generic",
+      		"elements": [{
+      			"title": `You sent me "${received_message.text}". Is this the answer you wish to keep?`,
+      			"subtitle" : "Tap the button to answer",
+      			"buttons": [
+				              {
+				                "type": "postback",
+				                "title": "Yes!",
+				                "payload": "yes",
+				              },
+				              {
+				                "type": "postback",
+				                "title": "No!",
+				                "payload": "no",
+				              }
+				            ]
+      		}]
+      	}
+      }
+
     }
   }  
   
