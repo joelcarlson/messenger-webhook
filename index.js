@@ -4,6 +4,7 @@
 const
   express = require('express'),
   bodyParser = require('body-parser'),
+  const request = require('request'),
   app = express().use(bodyParser.json()); // creates express http server
 
 
@@ -28,7 +29,7 @@ app.post('/webhook', (req, res) => {
 
 	  // Get the sender PSID
 	  let sender_psid = webhook_event.sender.id;
-	  console.log('Sender PSID: ' + sender_psid);     
+	  console.log('The Sender PSID is: ' + sender_psid);     
 	  
 	  // Check if the event is a message or postback and
 	  // pass the event to the appropriate handler function
