@@ -1,14 +1,21 @@
 {
   "name": "messenger-webhook",
   "version": "1.0.0",
-  "description": "",
+  "description": "test chatbot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelcarlson/messenger-webhook.git"
+  },
+  "author": "joel carlson",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joelcarlson/messenger-webhook/issues"
+  },
+  "homepage": "https://github.com/joelcarlson/messenger-webhook#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4"
