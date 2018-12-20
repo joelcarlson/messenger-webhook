@@ -2,10 +2,8 @@
 
 // Imports dependencies and set up http server
 const
-  request = require('request'),
   express = require('express'),
   bodyParser = require('body-parser'),
-  mongoose = require('mongoose'),
   app = express().use(bodyParser.json()); // creates express http server
 
 
